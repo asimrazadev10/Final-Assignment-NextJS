@@ -3,6 +3,15 @@ import Navigation from "@/ui/components/navigation";
 import ScrollToTop from "@/ui/components/ScrollToTop";
 import Footer from "@/ui/components/footer";
 import ToastProvider from "@/lib/ToastProvider";
+import { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: {
+    template: '%s | SubFlow',
+    default: 'SubFlow',
+  },
+  description: 'Manage your subscriptions with ease using SubFlow.',
+};
 
 export default function RootLayout({
   children,
