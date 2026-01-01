@@ -83,14 +83,14 @@ export function Sidebar({
 
       <aside
         className={[
-          'fixed left-0 top-16 z-40 h-[calc(100vh-4rem)] border-r border-white/10 bg-gradient-to-b from-black to-purple-900/5 backdrop-blur-xl transition-all duration-300',
+          'fixed left-0 top-16 z-40 h-100% border-r border-white/10 bg-gradient-to-b from-black to-purple-900/5 backdrop-blur-xl transition-all duration-300',
           sidebarOpen ? 'w-72 translate-x-0' : 'w-20 -translate-x-full lg:translate-x-0',
           'lg:sticky lg:top-16 lg:translate-x-0',
         ].join(' ')}
       >
-        <div className="flex h-full flex-col overflow-hidden">
+        <div className="flex h-full min-h-0 flex-col overflow-hidden">
           {/* Top */}
-          <div className="flex items-center justify-between border-b border-white/10 p-6">
+          <div className="flex h-25 items-center justify-between border-b border-white/10 p-6">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
               className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-600 via-purple-500 to-pink-600 shadow-lg shadow-purple-600/50 transition-transform hover:scale-105"
@@ -159,7 +159,7 @@ export function Sidebar({
           )}
 
           {/* Navigation */}
-          <nav className="flex-1 space-y-1 overflow-y-auto p-4">
+          <nav className="min-h-0 flex-1 space-y-1 overflow-y-auto p-4 [scrollbar-gutter:stable]">
             {menuItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeTab === item.id;
@@ -169,7 +169,7 @@ export function Sidebar({
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
                   className={[
-                    'group flex w-full items-center justify-between rounded-xl px-4 py-3 transition-all',
+                    'group flex w-full items-center justify-between rounded-xl pl-1.5 py-3 transition-all',
                     isActive
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-600/30'
                       : 'text-gray-400 hover:bg-white/5 hover:text-white',

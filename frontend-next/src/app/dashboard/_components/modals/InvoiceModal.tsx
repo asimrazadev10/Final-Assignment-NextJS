@@ -45,7 +45,7 @@ export function InvoiceModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-      <div className="w-full max-w-lg rounded-2xl border border-white/10 bg-gray-900">
+      <div className="w-full max-w-lg rounded-2xl border border-white/10 bg-gray-900 overflow-y-auto max-h-[90vh]">
         <div className="border-b border-white/10 p-6">
           <h3 className="text-xl font-bold text-white">{isEditing ? 'Edit Invoice' : 'Add Invoice'}</h3>
         </div>
